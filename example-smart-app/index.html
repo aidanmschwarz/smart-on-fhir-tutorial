@@ -174,12 +174,13 @@
 			
 			smart.api.fetchAll({type: 'Condition', query:{"encounter":encounterId}}).then(function(response) {
 				var retString = "<table class='dataTable'>";
-				response.forEach(function(allObj,idx){
+				response.forEach(function(condObj,idx){
+					console.log(condObj);
 					retString += 
 						"<tr>"+
-							"<td>"+allObj.code+"</td>"+
-							"<td>"+allObj.category+"</td>"+
-							"<td>"+allObj.status+"</td>"+
+							"<td>"+condObj.code+"</td>"+
+							"<td>"+condObj.category+"</td>"+
+							"<td>"+condObj.status+"</td>"+
 						"</tr>";
 				});
 				retString += "</table>";
