@@ -138,8 +138,6 @@
 			
 			smart.api.fetchAll({type: 'Encounter', query:{"_id":encounterId}}).then(function(response) {
 				response = response[0];
-				console.log(response);
-				
 				if (response.identifier && response.identifier.length) {
 					response.identifier.forEach(function(obj,idx){
 						if (obj.system === "urn:oid:3.3.3.3.3.3") {
@@ -154,6 +152,8 @@
 			patientApi.fetchAll({type: 'MedicationStatement'}).then(function(response) {
 				var retString = "<table class='dataTable'>";
 				response.forEach(function(medObj,idx){
+					if (idx > 5)
+						break;
 					retString += "<tr><td>"+medObj.medicationCodeableConcept.text+"</td></tr>";
 				});
 				retString += "</table>";
@@ -163,6 +163,8 @@
 			patientApi.fetchAll({type:'AllergyIntolerance',query:{status:'active'}}).then(function(response) {
 				var retString = "<table class='dataTable'>";
 				response.forEach(function(allObj,idx){
+					if (idx > 5)
+						break;
 					retString += 
 						"<tr>"+
 							"<td>"+allObj.substance.text+"</td>"+
@@ -176,6 +178,8 @@
 			smart.api.fetchAll({type: 'Condition', query:{"encounter":encounterId}}).then(function(response) {
 				var retString = "<table class='dataTable'>";
 				response.forEach(function(condObj,idx){
+					if (idx > 5)
+						break;
 					console.log(condObj);
 					retString += 
 						"<tr>"+
