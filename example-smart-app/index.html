@@ -39,6 +39,7 @@
 				<li><dt>Visit Reason:</dt><dd id='demo-rfv'>&nbsp;</dd></li>
 			</ul>
 		</div>
+		<div id="conditionDiv" class="dataDiv">Loading conditions...</div>
 		<div id="medStatementDiv" class="dataDiv">Loading meds...</div>
 		<div id="allergyDiv" class="dataDiv">Loading allergies...</div>
 		<div id="obvDiv" class="dataDiv">Loading observations...</div>
@@ -182,7 +183,7 @@
 						"</tr>";
 				});
 				retString += "</table>";
-				$("#allergyDiv").html(retString);
+				$("#conditionDiv").html(retString);
 			});
 
 			var lookbackDate = new Date();
