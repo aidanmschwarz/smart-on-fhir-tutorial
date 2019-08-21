@@ -185,7 +185,7 @@
 						"<tr>"+
 							"<td>"+condObj.code.text+"</td>"+
 							"<td>"+condObj.category.text+"</td>"+
-							"<td>"+condObj.clinicalStatus+"</td>"+
+							"<td>"+((condObj.category.text == "Problem") ? 'condObj.clinicalStatus' : 'observed') +"</td>"+
 						"</tr>";
 				});
 				retString += "</table>";
