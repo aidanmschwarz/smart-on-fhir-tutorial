@@ -159,6 +159,7 @@
 				retString += "</table>";
 				$("#medStatementDiv").html(retString);
 			});
+			
 			patientApi.fetchAll({type:'AllergyIntolerance',query:{status:'active'}}).then(function(response) {
 				var retString = "<table class='dataTable'>";
 				response.forEach(function(allObj,idx){
@@ -178,9 +179,9 @@
 					console.log(condObj);
 					retString += 
 						"<tr>"+
-							"<td>"+condObj.code+"</td>"+
-							"<td>"+condObj.category+"</td>"+
-							"<td>"+condObj.status+"</td>"+
+							"<td>"+condObj.code.text+"</td>"+
+							"<td>"+condObj.category.text+"</td>"+
+							"<td>"+condObj.clinicalStatus+"</td>"+
 						"</tr>";
 				});
 				retString += "</table>";
